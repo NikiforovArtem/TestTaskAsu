@@ -4,3 +4,7 @@ For run use command 'docker compose up'
 
 FrontEnd in default localhost:3001
 BackEnd in default localhost:2266
+
+Existing auth creds:
+Login: test@gmail.com
+pass: 111111
