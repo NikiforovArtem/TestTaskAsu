@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  asuTaskFront:
+    image: asu-task-front
+    container_name: asuTaskFront
+    build:
+      context: .
+      dockerfile: ./AsuTaskFe/Dockerfile
+    ports:
+      - 3001:3000
+    environment:
+      - REACT_APP_API_URL=http://localhost:2266
+  asuTaskBack:
+    image: asu-task-back
+    container_name: asuTaskBack
+    build:
+      context: .
+      dockerfile: ./AsuTask/AsuTask/Dockerfile
+    volumes:
+      - "./AsuTask/AsuTask/LocalDatabase.db:/app/LocalDatabase.db"
+    ports:
+      - 2266:80
